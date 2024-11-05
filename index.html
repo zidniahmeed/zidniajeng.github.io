@@ -318,7 +318,7 @@
               <li class="timeline-inverted">
                 <div
                   class="timeline-image"
-                  style="background-image: url(img/ketemu_pertama.JPG)"
+                  style="background-image: url()"
                 ></div>
                 <div class="timeline-panel">
                   <div class="timeline-heading">
@@ -658,6 +658,11 @@
 
         <div class="row justify-content-center mt-5">
           <div class="col-md-6">
+            <div class="text-center">
+              <h2 class="text-center">Kirim Ucapan</h2>
+              <p class="text-center">Isi form di bawah ini untuk mengirim ucapan atau doa.</p>
+            </div>
+            <!-- <p>Isi form di bawah ini untuk melakukan konfirmasi kehadiran.</p> -->
             <form
               id="myForm"
               method="POST"
@@ -735,12 +740,14 @@
         <div class="row">
           <div class="col text-center">
             <small class="block"
-              >&copy; 2024 ZiNI Wedding. Iki Gawe Dewe Lurrrrrr.</small
+              >&copy; 2024 Zidni&Ajeng Wedding. Iki Gawe Dewe Lurrrrrr.</small
             >
             <small class="block"
               >Design by
               <a href="https://www.instagram.com/hadzidn">@hadzidn</a>.</small
             >
+
+          
 
             <ul class="mt-3">
               <li>
@@ -764,6 +771,10 @@
                 ></a>
               </li>
             </ul>
+            <small class=""
+            >Original Song
+            <a href="https://www.youtube.com/watch?v=xMJXt74yEbY">DAVI SIUMBING - DI TEPIAN RINDU (OFFICIAL MUSIC VIDEO)</a>.</small
+          >
           </div>
         </div>
       </div>
@@ -771,8 +782,9 @@
 
     <div id="audio-container">
       <audio id="song" autoplay loop>
-        <!-- <source src="audio/save-and-sound.mp3" type="audio/mp3" /> -->
-      </audio>
+        <source src="audio/videoplayback.mp3" type="audio/mp3" />
+        Your browser does not support the audio element.
+    </audio>
 
       <div class="audio-icon-wrapper" style="display: none">
         <i class="bi bi-disc"></i>
@@ -962,22 +974,7 @@
       // }
       disableScroll();
     </script>
-    <script>
-      window.addEventListener("load", function () {
-        const form = document.getElementById("my-form");
-        form.addEventListener("submit", function (e) {
-          e.preventDefault();
-          const data = new FormData(form);
-          const action = e.target.action;
-          fetch(action, {
-            method: "POST",
-            body: data,
-          }).then(() => {
-            alert("Konfirmasi kehadiran berhasil terkirim!");
-          });
-        });
-      });
-    </script>
+   
     <script>
       const urlParams = new URLSearchParams(window.location.search);
       const paramValue = urlParams.get("testt"); // Get 'testt' parameter value
