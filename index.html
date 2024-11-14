@@ -623,7 +623,7 @@
           <div class="col-12">
             <div class="mb-3">
               <label for="nama" class="form-label">Nama</label>
-              <input type="text" class="form-control" id="nama" name="nama" />
+              <input type="text" class="form-control" id="nama" name="nama" required/>
             </div>
           </div>
           <div class="col-12">
@@ -638,14 +638,15 @@
                 max="5"
                 length="1"
                 value="1"
+                required
               />
             </div>
           </div>
           <div class="col-12">
             <div class="mb-3">
               <label for="status" class="form-label">Konfirmasi</label>
-              <select name="status" id="status" class="form-select">
-                <option selected>Pilih salah satu</option>
+              <select name="status" id="status" class="form-select" required>
+                <option value="">Pilih salah satu</option>
                 <option value="Hadir">Hadir</option>
                 <option value="Tidak Hadir">Tidak Hadir</option>
               </select>
