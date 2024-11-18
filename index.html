@@ -714,11 +714,11 @@
             <ul class="list-group">
               <li class="list-group-item">
                 <div class="fw-bold">BCA</div>
-                8161341720 - Ahmad Zidni Rosadi
+                <span class="copy-text" onclick="copyToClipboard('8161341720')">8161341720</span> <span>Ahmad Zidni Rosadi</span> 
               </li>
               <li class="list-group-item">
                 <div class="fw-bold">BRI</div>
-                614301028772534 - Ni Ajeng Marifatul Umroh
+                <span class="copy-text" onclick="copyToClipboard('614301028772534')">614301028772534</span> <span> Ni Ajeng Marifatul Umroh</span> 
               </li>
               <li class="list-group-item">
                 <div class="fw-bold">Saweria</div>
@@ -732,6 +732,7 @@
             </ul>
           </div>
         </div>
+        
       </div>
     </section>
 
@@ -739,17 +740,31 @@
       <div class="container">
         <div class="row">
           <div class="col text-center">
-            <small class="block">&copy; 2024 Zid Ni Ajeng Wedding</small>
-            <br />
+            <small class="block">&copy;2024 Zid Ni Ajeng Wedding.</small>
             <small class="block">Undangan Iki Gawe Dewe Lurrrrrr.</small>
-            <br />
             <small class="block"
               >Design And Code by
               <a href="https://www.instagram.com/hadzidn" target="_blank"
                 >@hadzidn</a
               ></small
             >
+            <br>
 
+           
+            <small class=""
+              >Original Back Song
+              <a
+                href="https://www.youtube.com/watch?v=xMJXt74yEbY"
+                target="_blank"
+                >DAVI SIUMBING - DI TEPIAN RINDU (OFFICIAL MUSIC VIDEO)</a
+              ></small
+            ><br />
+            <small class=""
+              >Photos Galery By
+              <a href="https://www.instagram.com/al.bastomii/" target="_blank"
+                >@al.bastomii</a
+              ></small
+            >
             <ul class="mt-3">
               <li>
                 <a href="https://www.instagram.com/hadzidn"
@@ -772,20 +787,6 @@
                 ></a>
               </li>
             </ul>
-            <small class=""
-              >Original Back Song
-              <a
-                href="https://www.youtube.com/watch?v=xMJXt74yEbY"
-                target="_blank"
-                >DAVI SIUMBING - DI TEPIAN RINDU (OFFICIAL MUSIC VIDEO)</a
-              ></small
-            ><br />
-            <small class=""
-              >Photos Galery By
-              <a href="https://www.instagram.com/al.bastomii/" target="_blank"
-                >@al.bastomii</a
-              ></small
-            >
           </div>
         </div>
       </div>
@@ -991,5 +992,17 @@
       const paramValue = urlParams.get("nama"); // Get 'testt' parameter value
       document.getElementById("name").innerText = paramValue;
     </script>
+
+<script>
+  function copyToClipboard(text) {
+    const textArea = document.createElement("textarea");
+    textArea.value = text;
+    document.body.appendChild(textArea);
+    textArea.select();
+    document.execCommand('copy');
+    document.body.removeChild(textArea);
+    alert('No Rekening Berhasil Tercopy Di Clipboard');
+  }
+</script>
   </body>
 </html>
