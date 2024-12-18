@@ -292,7 +292,6 @@
           <div class="col-md-8 col-10 text-center">
             <span>Bagaimana Cinta Kami Bersemi</span>
             <h2>Cerita Kami</h2>
-            
           </div>
         </div>
 
@@ -623,7 +622,13 @@
           <div class="col-12">
             <div class="mb-3">
               <label for="nama" class="form-label">Nama</label>
-              <input type="text" class="form-control" id="nama" name="nama" required/>
+              <input
+                type="text"
+                class="form-control"
+                id="nama"
+                name="nama"
+                required
+              />
             </div>
           </div>
           <div class="col-12">
@@ -678,10 +683,12 @@
               </div>
               <div class="mb-3">
                 <label for="body" class="form-label">Ucapan/Doa</label>
-                <textarea  class="form-control"
-                id="body"
-                name="body"
-                required></textarea>
+                <textarea
+                  class="form-control"
+                  id="body"
+                  name="body"
+                  required
+                ></textarea>
               </div>
               <!-- Hidden input for the current date -->
               <input type="hidden" id="dateNow" name="date" />
@@ -702,7 +709,6 @@
           <div class="col-md-8 col-10 text-center">
             <span>ungkapan tanda kasih</span>
             <h2>Kirim Hadiah</h2>
-           
           </div>
         </div>
 
@@ -711,11 +717,19 @@
             <ul class="list-group">
               <li class="list-group-item">
                 <div class="fw-bold">BCA</div>
-                <span class="copy-text" onclick="copyToClipboard('8161341720')">8161341720</span> <span>Ahmad Zidni Rosadi</span> 
+                <span class="copy-text" onclick="copyToClipboard('8161341720')"
+                  >8161341720</span
+                >
+                <span>Ahmad Zidni Rosadi</span>
               </li>
               <li class="list-group-item">
                 <div class="fw-bold">BRI</div>
-                <span class="copy-text" onclick="copyToClipboard('614301028772534')">614301028772534</span> <span> Ni Ajeng Marifatul Umroh</span> 
+                <span
+                  class="copy-text"
+                  onclick="copyToClipboard('614301028772534')"
+                  >614301028772534</span
+                >
+                <span> Ni Ajeng Marifatul Umroh</span>
               </li>
               <li class="list-group-item">
                 <div class="fw-bold">Saweria</div>
@@ -729,7 +743,6 @@
             </ul>
           </div>
         </div>
-        
       </div>
     </section>
 
@@ -745,9 +758,8 @@
                 >@hadzidn</a
               ></small
             >
-            <br>
+            <br />
 
-           
             <small class=""
               >Original Back Song
               <a
@@ -860,36 +872,35 @@
         url: "https://sheetdb.io/api/v1/xfi1inyfc4tde", // Replace with your API URL
         method: "GET",
         success: function (response) {
-          // Sort by date in descending order (newest first)
-          response.sort((a, b) => new Date(b.date) - new Date(a.date));
+        // Sort by date in descending order (newest first)
+        response.sort((a, b) => new Date(b.date) - new Date(a.date));
 
-          let htmlContent = "";
+        let htmlContent = "";
 
-          response.forEach((item) => {
+        response.forEach((item) => {
             const date = item.date || "N/A";
             const name = item.name || "Anonymous";
             const body = item.body || "No comment";
 
             htmlContent += `
-        <div class="comment row">
-          <div class="comment-header col-4">
-            <div class="user-details">
-              <p class="user-name">${name}</p>
-              <p class="comment-date">${date}</p>
-            </div>
-          </div>
-          <div class="comment-body col-7">
-            <p>${body}</p>
-          </div>
-        </div>
-        <br>
-      `;
+                <div class="comment row">
+                    <div class="comment-header col-4">
+                        <div class="user-details">
+                            <p class="user-name">${name}</p>
+                            <p class="comment-date">${date}</p>
+                        </div>
+                    </div>
+                    <div class="comment-body col-7" style="white-space: pre-wrap;">
+                        <p>${body}</p>
+                    </div>
+                </div>
+                <br>
+            `;
+        });
 
-          });
-
-          // Insert content into a specific element in HTML
-          $("#resultDiv").html(htmlContent);
-        },
+        // Append the generated HTML to your container
+        $('#resultDiv').html(htmlContent);
+    },
         error: function (error) {
           console.log("Error:", error);
         },
@@ -988,16 +999,16 @@
       document.getElementById("name").innerText = paramValue;
     </script>
 
-<script>
-  function copyToClipboard(text) {
-    const textArea = document.createElement("textarea");
-    textArea.value = text;
-    document.body.appendChild(textArea);
-    textArea.select();
-    document.execCommand('copy');
-    document.body.removeChild(textArea);
-    alert('No Rekening Berhasil Tercopy Di Clipboard');
-  }
-</script>
+    <script>
+      function copyToClipboard(text) {
+        const textArea = document.createElement("textarea");
+        textArea.value = text;
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand("copy");
+        document.body.removeChild(textArea);
+        alert("No Rekening Berhasil Tercopy Di Clipboard");
+      }
+    </script>
   </body>
 </html>
