@@ -36,7 +36,7 @@
   </head>
 
   <body>
-    <section
+    <!-- <section
       id="hero"
       class="hero w-100 h-100 p-3 mx-auto text-center d-flex justify-content-center align-items-center text-white"
     >
@@ -49,9 +49,9 @@
           >Lihat Undangan</a
         >
       </main>
-    </section>
+    </section> -->
 
-    <nav class="navbar navbar-expand-md bg-transparent sticky-top mynavbar">
+    <!-- <nav class="navbar navbar-expand-md bg-transparent sticky-top mynavbar">
       <div class="container">
         <a class="navbar-brand" href="#">Zi&Ni</a>
         <button
@@ -91,8 +91,8 @@
           </div>
         </div>
       </div>
-    </nav>
-
+    </nav> -->
+    <!-- 
     <section id="home" class="home">
       <div class="container">
         <div class="row text-center ayat mb-3">
@@ -184,9 +184,9 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
 
-    <section id="info" class="info">
+    <!-- <section id="info" class="info">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-md-8 col-10 text-center">
@@ -284,9 +284,9 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
 
-    <section id="story" class="story">
+    <!-- <section id="story" class="story">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-md-8 col-10 text-center">
@@ -358,9 +358,9 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
 
-    <section id="gallery" class="gallery">
+    <!-- <section id="gallery" class="gallery">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-md-8 col-10 text-center">
@@ -484,7 +484,7 @@
               />
             </a>
           </div>
-          <!-- pinus -->
+          
           <div class="col mt-3">
             <a
               href="img/gallery/pinus/1.jpg"
@@ -602,9 +602,9 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
 
-    <section id="rsvp" class="rsvp">
+    <!-- <section id="rsvp" class="rsvp">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-md-8 col-10 text-center">
@@ -670,7 +670,6 @@
                 Isi form di bawah ini untuk mengirim ucapan atau doa.
               </p>
             </div>
-            <!-- <p>Isi form di bawah ini untuk melakukan konfirmasi kehadiran.</p> -->
             <form
               id="myForm"
               method="POST"
@@ -690,7 +689,6 @@
                   required
                 ></textarea>
               </div>
-              <!-- Hidden input for the current date -->
               <input type="hidden" id="dateNow" name="date" />
 
               <button type="submit" class="btn btn-primary">Submit</button>
@@ -703,9 +701,9 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
 
-    <section id="gifts" class="gifts">
+    <!-- <section id="gifts" class="gifts">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-md-8 col-10 text-center">
@@ -746,9 +744,9 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
 
-    <footer>
+    <!-- <footer>
       <div class="container">
         <div class="row">
           <div class="col text-center">
@@ -801,14 +799,14 @@
           </div>
         </div>
       </div>
-    </footer>
+    </footer> -->
 
     <div id="audio-container">
-      <audio id="song" autoplay loop>
+      <!-- <audio id="song" autoplay loop>
         <source src="audio/videoplayback.mp3#t=00:00:10" type="audio/mp3" />
         Your browser does not support the audio element.
-      </audio>
-
+      </audio> -->
+      <div class="id"></div>
       <div class="audio-icon-wrapper" style="display: none">
         <i class="bi bi-disc"></i>
       </div>
@@ -874,12 +872,12 @@
         url: "https://docs.google.com/spreadsheets/d/11VXX2e98ttlx9iQryQLBesS4lfyJMyXhHbRZdE7joRQ/", // Replace with your API URL
         method: "GET",
         success: function (response) {
-        // Sort by date in descending order (newest first)
-        response.sort((a, b) => new Date(b.date) - new Date(a.date));
+          // Sort by date in descending order (newest first)
+          response.sort((a, b) => new Date(b.date) - new Date(a.date));
 
-        let htmlContent = "";
+          let htmlContent = "";
 
-        response.forEach((item) => {
+          response.forEach((item) => {
             const date = item.date || "N/A";
             const name = item.name || "Anonymous";
             const body = item.body || "No comment";
@@ -898,11 +896,11 @@
                 </div>
                 <br>
             `;
-        });
+          });
 
-        // Append the generated HTML to your container
-        $('#resultDiv').html(htmlContent);
-    },
+          // Append the generated HTML to your container
+          $("#resultDiv").html(htmlContent);
+        },
         error: function (error) {
           console.log("Error:", error);
         },
@@ -1011,6 +1009,13 @@
         document.body.removeChild(textArea);
         alert("No Rekening Berhasil Tercopy Di Clipboard");
       }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/device-uuid@1.0.4/lib/device-uuid.min.js"></script>
+
+    <script>
+      var uuid = new DeviceUUID().get();
+      console.log(uuid);
+      $('.id').text(uuid);
     </script>
   </body>
 </html>
